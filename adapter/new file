@@ -1,0 +1,14 @@
+// Adapter to use HDMIPlug with VideoPlug interface
+public class VideoPlugAdapter implements VideoPlug {
+    private HDMIPlug hdmiPlug;
+
+    // Constructor
+    public VideoPlugAdapter(HDMIPlug hdmiPlug){
+        this.hdmiPlug = hdmiPlug;
+    }
+
+    // Implementing VideoPlug interface using HDMIPlug's digitalDisplay()
+    public display(int width, int height){
+        hdmiPlug.digitalDisplay();
+    }
+}
