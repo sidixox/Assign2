@@ -1,0 +1,14 @@
+public class RegisterView {
+    public function render($username, $title, $h1Style){
+        echo "<html>
+            <head>
+                $title
+            </head>
+            <body>
+                $h1Style
+                    Welcome $username
+                </h1>
+            </body>
+        </html>";
+    }
+}
