@@ -1,11 +1,23 @@
-public class Light{
-	private String color;
+public interface Observer {
+    // Observer interface with an update method
+    public void update();
+}
 
-	public Light(String color){
-		this.color = color;
-	}
+public class Light implements Observer {
+    private String color;
 
-	// light turns on with specified color for 1 second	
-	public void turnOn(){
-	}
-}	
+    public Light(String color){
+        this.color = color;
+    }
+
+    // light turns on with specified color for 1 second    
+    public void turnOn(){
+        print "Light is turned on: " + color;
+    }
+
+    // Implementation of the update method in the Observer interface
+    public void update() {
+        turnOn();
+    }
+}
+
