@@ -1,0 +1,23 @@
+public class RegisterController {
+    private $userModel;
+
+    // constructor
+    public RegisterController($userModel){
+        this.$userModel = $userModel;
+    }
+
+    public function registerUser($username, $password1, $password2){
+        // validate passwords and register user
+        if ($password1 != $password2) {
+            return redirectBack(400);
+        }
+
+        $registrationSuccess = $this.$userModel->createUser($username, $password1);
+
+        if (!$registrationSuccess) {
+            return redirectBack(500);
+        }
+
+        return true; // Registration successful
+    }
+}
