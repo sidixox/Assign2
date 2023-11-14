@@ -1,7 +1,8 @@
-public SomeOtherClass{
+public class SomeOtherClass {
 
-	public main(){
-		Logger l = new Logger();
-		l.info("hello from some other class!");
-	}
+    public main(){
+        // Get the singleton instance of Logger
+        Logger l = Logger.getInstance();
+        l.info("hello from some other class!");
+    }
 }
